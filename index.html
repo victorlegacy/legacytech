@@ -1,117 +1,595 @@
 <!DOCTYPE html>
-	<html>
-	<head>
-		<meta charset="utf-8">
-		 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<title>Legacy Tech</title>
-		<link rel="icon" href="l-logo.png">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<style type="text/css">
-			.bg{
-				position: fixed;
-				z-index: -1;
-				top: 0px;
-				right: 0px;
-				left: 0px;
-				bottom: 0px;
-				opacity: 0.8;
-			}
-			.text{
-				color: white;
-				font-family: 'Century Gothic';
-				font-size: 5rem;
-				text-align: center;
-				margin-top: 15%;
+<html lang="en">
 
-			}
-			.text_small{
-				color: white;
-				font-family: 'Century Gothic';
-				font-size: 2.5rem;
-				text-align: center;
-				margin-top:40%;
+<head>
+    <meta charset="utf-8">
+    <title>Legacy Tech</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- Favicon -->
+    <link href="img/l-tech.png" rel="icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
 
-			}
+    <!-- Icon Font Stylesheet -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-body{
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-	background-size: cover;
-	background-repeat: none;
-	background-position: center;
-}
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-@media only screen and (max-width: 600px) {
-  .hide-on-small-only, .hide-on-small-and-down {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 993px) {
-  .hide-on-large-only {
-    display: none !important;
-  }
-}
-		</style>
-	</head>
-	<body id="body">
-		<img  src="bg.svg"  width="100%" height="100%" class="bg hide-on-small-only">
-		<img src="small_bg.png"  width="100%" height="100%" class="bg hide-on-large-only hide-on-med-only">
-		<h1 class="text hide-on-small-only ">
-			LEGACY TECH
-		</h1>
-		<h4 class="text_small hide-on-large-only hide-on-med-only">
-			LEGACY TECH
-		</h4>
-		<div id="wave" class=" loader" style="z-index:99">
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-            </div> 
-            <h5 style="text-align:center">Loading</h5>
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
 
-            
-	</body>
-	</html>	
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
 
-	<script>
-		
-		var body= document.getElementById('body');
-	
-		function gif1(){
-		
-		body.style.background="url('GIF/1.gif')";
-		setTimeout(gif2,10000);
-	}
-	function gif2(){
-		
-		body.style.background="url('GIF/2.gif')";
-		body.style.backgroundSize="cover";
-		setTimeout(gif3,10000);
-	}
-	function gif3(){
-		
-		body.style.background="url('GIF/3.gif')";
-		body.style.backgroundSize="cover";
-		setTimeout(gif4,10000);
-	}
-	function gif4(){
-		
-		body.style.background="url('GIF/4.webp')";
-		body.style.backgroundSize="cover";
-		setTimeout(gif5,10000);
-	}
-	function gif5(){
-		 
-		body.style.background="url('GIF/5.gif')";
-		body.style.backgroundSize="cover";
-	
-	}
 
-gif1();
-	</script>
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0"> <img src="img/l-tech.png" width="18%" alt=""> <span class="fs-5">Legacy Tech</span></h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="#!" class="nav-item nav-link active" id="home_">Home</a>
+                        <a href="#about" class="nav-item nav-link" id="about_" onclick="change_about()">About</a>
+                        <a href="#service" class="nav-item nav-link" id="service_">Service</a>
+                        <a href="#project" class="nav-item nav-link" id="project_">Project</a>
+                        <!-- <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                               
+                                -0o6
+                            </div>
+                        </div> -->
+                        <a href="#contact" class="nav-item nav-link" id="contact_">Contact</a>
+                    </div>
+                    <!-- <script>
+                        function change_about(){
+                            document.getElementById('about_').setAttribute("class","nav-item nav-link active");
+                            var elemen = document.getElementById('about');
+                            elemen.scrollIntoView();
+                        }
+                    </script> -->
+                    <!-- <butaton type="button" class="btn text-secondary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton> -->
+                    <a href="start/" class="btn btn-secondary text-light rounded-pill py-2 px-4 ms-3">Get Started</a>
+                </div>
+            </nav>
 
+            <div class="container-xxl py-5 bg-primary hero-header mb-5">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <br>
+                            <br>
+                            <br>
+                            <h1 class="text-white mb-4 animated zoomIn">Boost your business online</h1>
+                            <p class="text-white pb-3 animated zoomIn">
+                               Technology is a powerful tool that can transform businesses and we're excited to partner with you on this journey.
+                               <br>Legacytech offers Websites Development, Social Media Managment, Cloud Technology and lots more,
+                               thereby boosting your Business credibility & Generationg sales.
+
+                            </p>
+                            <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Get a Quote</a>
+                            <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-start">
+                            
+                            <img class="img-fluid" src="img/hero.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Full Screen Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width: 600px;">
+                            <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
+                            <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Full Screen Search End -->
+
+
+        <!-- About Start -->
+        <div class="container-xxl py-5" id="about">
+            <div class="container px-lg-5">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="section-title position-relative mb-4 pb-2">
+                            <h6 class="position-relative text-primary ps-4">About Us</h6>
+                            <h2 class="mt-2">#1 digital solutions provider</h2>
+                        </div>
+                        <p class="mb-4">Our team of experts is committed to delivering high-quality services that meet your business needs. Whether you're looking to enhance your online presence, create stunning graphics, or develop a user-friendly website, we've got you covered. Our experienced professionals are equipped with the latest technology and tools to help you achieve your goals.</p>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>New technologies</h6>
+                                <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Professional Delivery</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>24/7 Support</h6>
+                                <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Fair Prices</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-4">
+                            <a class="btn btn-primary rounded-pill px-4 me-3" href=""><i class="fab fa-whatsapp"></i> Message Us</a>
+                            <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <br><br>
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/about.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Newsletter Start -->
+        <div class="container-xxl bg-primary newsletter my-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container px-lg-5">
+                <div class="row align-items-center" style="height: 250px;">
+                    <div class="col-12 col-md-6">
+                        <h3 class="text-white">Interested in learning?</h3>
+                        <small class="text-white">Join our online lessons on Web Development, Graphic Design, SEO, Digital Marketing & others</small>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email or phone" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center mb-n5 d-none d-md-block">
+                        <img class="img-fluid mt-5" style="height: 250px;" src="img/undraw_video_call_re_4p26.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter End -->
+
+
+        <!-- Service Start -->
+        <div class="container-xxl py-5" id="service">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Our Services</h6>
+                    <h2 class="mt-2">What Solutions We Provide</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-code fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Web Development</h5>
+                            <p>Grow your business credibility and sales with stunning, modern, and mobile-friendly websites/webapps. </p>
+                            <a class="btn px-3 mt-auto mx-auto" href="">Get service</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fas fa-hashtag fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Social Media Management</h5>
+                            <p>Give your social media pages a professional look with our pro-tools.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="">Get service</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fas fa-pen fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Graphic Design</h5>
+                            <p>Get creative logos, flyers, banners, posters and more for both print and social media posts. </p>
+                            <a class="btn px-3 mt-auto mx-auto" href="">Get service</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa-solid fa-bullhorn fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Digital Marketing</h5>
+                            <p>Reach potential customers, both local and international, with our advanced digital marketing tools</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="">Get service</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-mobile fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">App Development</h5>
+                            <p>Get desktop and mobile applications with full functionality and modern design.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="">Get service</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa-solid fa-chalkboard-user fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Training</h5>
+                            <p>Learn, refresh & get proffessional on any of the above services and more.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="">Get service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+
+        <!-- Portfolio Start -->
+        <div class="container-xxl py-5" id="project">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Our Projects</h6>
+                    <h2 class="mt-2">Recently Launched Projects</h2>
+                </div>
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-12 text-center">
+                        <ul class="list-inline mb-5" id="portfolio-flters">
+                            <li class="btn px-3 pe-4 active" data-filter="*">All</li>
+                            <li class="btn px-3 pe-4" data-filter=".first">Websites</li>
+                            <li class="btn px-3 pe-4" data-filter=".second">Webapps</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row g-4 portfolio-container">
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/1.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/1.png" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>E-commerce Webapp</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="https://www.starrsdeligt.store" target="_blank">Starrs Delight</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.3s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/2.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-2.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>E-commerce Webapp</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" target="_blank" href="https://www.hylook.ng">Hylook </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/3.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-3.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Educational Website</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" target="_blank" href="https://educationplanng.com">Educateplan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/4.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-4.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>E-commerce Webapp</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="https://www.riwofoodmart.com" target="_blank">Riwo Food MArt</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.3s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/5.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-5.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>SMM panel</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" target="_blank" href="https://www.growpagepro.com">Growpagepro</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/6.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-6.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Kiddies Website</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" target="_blank" href="https://www.supremekidcontest.com">Supreme Kids</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio End -->
+
+
+        <!-- Testimonial Start -->
+        <div class="container-xxl bg-primary testimonial py-5 my-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>Working with this web development firm was an absolute pleasure. They were professional, responsive, and incredibly talented. They took my website to the next level and I couldn't be happier with the end result. I would definitely work with them again and recommend them to anyone looking for web development services.</p>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-user"></i>
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">Peter Dremine</h6>
+                                <small>Architect</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>I was blown away by the professionalism and skill of this web development firm. They took my vision and turned it into a beautiful and functional website that exceeded my expectations. I highly recommend them to anyone looking for top-notch web development services.</p>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-user"></i>
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">Jenifer Uwe</h6>
+                                <small>Caterer</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>I had a great experience working with this web development firm. They were incredibly responsive and easy to work with throughout the entire process. The end result was a website that looked amazing and functioned perfectly. I would definitely work with them again in the future.</p>
+                        <div class="d-flex align-items-center">
+                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 50px; height: 50px;"> -->
+                            <i class="fas fa-user"></i>
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">Justin Ndukwe</h6>
+                                <small>Data Analyst</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>I am so impressed with the quality of work from this web development firm. They listened to all of my needs and delivered a website that was exactly what I was looking for. They were patient and communicative throughout the entire process, and I would highly recommend them to anyone.</p>
+                        <div class="d-flex align-items-center">
+                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg" style="width: 50px; height: 50px;"> -->
+                            <i class="fas fa-user-alt"></i>
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">Chinedu Mba</h6>
+                                <small>Lawyer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+
+        <!-- Team Start -->
+        <!-- <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Our Team</h6>
+                    <h2 class="mt-2">Meet Our Team Members</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <img class="img-fluid rounded w-100" src="img/team-1.jpg" alt="">
+                            </div>
+                            <div class="px-4 py-3">
+                                <h5 class="fw-bold m-0">Jhon Doe</h5>
+                                <small>CEO</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <img class="img-fluid rounded w-100" src="img/team-2.jpg" alt="">
+                            </div>
+                            <div class="px-4 py-3">
+                                <h5 class="fw-bold m-0">Emma William</h5>
+                                <small>Manager</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="team-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <img class="img-fluid rounded w-100" src="img/team-3.jpg" alt="">
+                            </div>
+                            <div class="px-4 py-3">
+                                <h5 class="fw-bold m-0">Noah Michael</h5>
+                                <small>Designer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Team End -->
+        <div class="container-xxl py-5" id="contact">
+            <div class="container px-lg-">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Talk to us</h6>
+                    <h2 class="mt-2">Send us a Message or Review</h2>
+                </div>
+                <div class="row g-4">
+                   
+                    <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="text-center" >
+                            <img src="img/mail.svg" alt="" width="50%">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="">
+                            <form action="">
+                                <div class="input-group form-group">
+                                <input type="text" name="" id="" placeholder="Full Name" class="form-control">
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <input type="email" name="" id="" placeholder="Email" class="form-control">
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <textarea name="" id="" cols="30" rows="4" class="form-control">Message </textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.6s"></div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">Get In Touch</h5>
+                        <!-- <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p> -->
+                        <p><i class="fa fa-phone-alt me-3"></i>+234 813 330 5170 </p>
+                        <p><i class="fab fa-whatsapp me-3"></i>+234 904 901 1250 </p>
+                        <p><i class="fa fa-envelope me-3"></i>contact@legacytech.com</p>
+                        <div class="d-flex pt-2">
+                            <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a> -->
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a> -->
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">Popular Link</h5>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Project</a>
+                        <a class="btn btn-link" href="">Service</a>
+                        <a class="btn btn-link" href="">Get a Quatation</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">Main Services</h5>
+                        <a class="btn btn-link" href="">Web Development</a>
+                        <a class="btn btn-link" href="">Graphic Design</a>
+                        <a class="btn btn-link" href="">SMM</a>
+                        <a class="btn btn-link" href="">Digital Marketing</a>
+                        <a class="btn btn-link" href="">Training</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>Get notified when a new service, course or update is available</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy;2023 <a class="border-bottom"  >Legacy Tech</a>
+							
+				
+							<!-- Designed By <a class="border-bottom"></a> -->
+                          
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            All Right Reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://kit.fontawesome.com/1e78e0a43f.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
